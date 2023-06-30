@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Login</title>
+  <link rel="stylesheet" type="text/css" href="user-styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>User Login</h1>
+    <form id="login-form">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="registration-options">
+      <p>Don't have an account? Register with:</p>
+      <button class="google-btn" onclick="registerWithGoogle()">Google</button>
+      <button class="gmail-btn" onclick="registerWithGmail()">Gmail</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Perform form validation and login logic
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Example login validation (replace with your own logic)
+      if (username === "DevRev" && password === "DevRevpassword") {
+        // Redirect to the next page after successful login
+        window.location.href = "user-nextpage.html";
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
+    });
+
+    function registerWithGoogle() {
+      // Redirect to Google registration page
+      window.location.href = "https://accounts.google.com/signup";
+    }
+
+    function registerWithGmail() {
+      // Redirect to Gmail registration page
+      window.location.href = "https://accounts.google.com/SignUpWithoutGmail";
+    }
+  </script>
+</body>
+</html>

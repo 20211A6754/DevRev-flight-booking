@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sucessfully changed</title>
+  <link rel="stylesheet" type="text/css" href="admin-login.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Sucessfully changed</h1>
+
+    <div id="success-message"></div>
+
+    <button id="logout-button">Logout</button>
+  </div>
+
+  <script>
+    // Retrieve the success message from the URL query parameter
+    var urlParams = new URLSearchParams(window.location.search);
+    var successMessage = urlParams.get("message");
+
+    // Display the success message
+    var messageElement = document.getElementById("success-message");
+    messageElement.textContent = successMessage;
+
+    // Logout button click event handler
+    var logoutButton = document.getElementById("logout-button");
+    logoutButton.addEventListener("click", function() {
+      // Redirect to the login page
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

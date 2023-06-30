@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ticket Confirmation</title>
+  <style>
+    .ticket {
+      width: 300px;
+      border: 1px solid #000;
+      padding: 20px;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+    }
+
+    .ticket h2 {
+      text-align: center;
+    }
+
+    .ticket p {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="ticket">
+    <h2>Ticket Confirmation</h2>
+
+    <p><strong>Name:</strong> <span id="name"></span></p>
+    <p><strong>Flight:</strong> <span id="flight"></span></p>
+    <p><strong>Source:</strong> <span id="source"></span></p>
+    <p><strong>Destination:</strong> <span id="destination"></span></p>
+    <p><strong>Date:</strong> <span id="date"></span></p>
+    <p><strong>Time:</strong> <span id="time"></span></p>
+
+    <h3>Seat Information</h3>
+    <p><strong>Seat:</strong> <span id="seat"></span></p>
+
+    <button id="cancel-button">Cancel Booking</button>
+  </div>
+
+  <script>
+    // Retrieve the values from URL parameters or session storage/local storage
+    var name = "Harshitha";
+    var flight = "Hyderabad to Bengaluru";
+    var date = "June 25, 2023";
+    var time = "19:35 PM";
+    var seat = "1A";
+
+    // Populate the ticket information
+    document.getElementById("name").innerText = name;
+    document.getElementById("flight").innerText = flight;
+    document.getElementById("date").innerText = date;
+    document.getElementById("time").innerText = time;
+    document.getElementById("seat").innerText = seat;
+
+    // Handle cancel button click event
+    document.getElementById("cancel-button").addEventListener("click", function() {
+      // Perform cancellation logic here
+      // ...
+
+      // Display cancellation message
+      alert("Ticket Cancelled");
+
+      // Redirect to user login page
+      window.location.href = "index.html";
+    });
+
+    // Print the ticket
+    window.print();
+  </script>
+</body>
+</html>

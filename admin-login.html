@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Login</title>
+  <link rel="stylesheet" type="text/css" href="admin-login.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Login</h1>
+    <form id="admin-login-form">
+      <div class="form-group">
+        <label for="admin-username">Username:</label>
+        <input type="text" id="admin-username" name="admin-username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="admin-password">Password:</label>
+        <input type="password" id="admin-password" name="admin-password" required>
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("admin-login-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Perform form validation and login logic
+      var adminUsername = document.getElementById("admin-username").value;
+      var adminPassword = document.getElementById("admin-password").value;
+
+      // Example login validation (replace with your own logic)
+      if (adminUsername === "admin" && adminPassword === "adminpassword") {
+        // Redirect to the admin next page after successful login
+        window.location.href = "admin-nextpage.html";
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
